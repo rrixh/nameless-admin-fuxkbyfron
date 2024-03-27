@@ -1022,7 +1022,7 @@ loadstring(game:HttpGet("https://gist.githubusercontent.com/DagerFild/b4776075a0
 end)
 
 cmd.add({"smalltp", "tinytp"}, {"smalltp (tinytp)", "tiny tp to player gui"}, function()--bettertp gui
-loadstring(game:HttpGet("https://pastebin.com/raw/HQY7LiGn"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/kfwV9ciu",true))()
 end)
 
 cmd.add({"mobilekeyboard", "mkb"}, {"mobilekeyboard (mkb)", "mobile keyboard"}, function()--mobile keyboard
