@@ -9056,7 +9056,7 @@ TextLabel_2.BackgroundTransparency = 0.600
 TextLabel_2.Position = UDim2.new(0.0269662924, 0, 0.162698418, 0)
 TextLabel_2.Size = UDim2.new(0, 421, 0, 115)
 TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "u are exekuting anti-ban/anti-logger meaning that Roblox's system wont be able to detekt your messages so u kant be banned for anything u say. are u sure u want to exekute it?"
+TextLabel_2.Text = "You are executing an anti-chat-log script meaning that Lollypop Admin🍭 wouldnt be able to detect when you have chatted meaning if you are on mobile and use the chat to execute commands it wont work. Are you sure you want to execute t?"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
@@ -9071,7 +9071,7 @@ TextButton.BorderColor3 = Color3.fromRGB(27, 42, 53)
 TextButton.Position = UDim2.new(0.287640452, 0, 0.658730209, 0)
 TextButton.Size = UDim2.new(0, 189, 0, 34)
 TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "Yes"
+TextButton.Text = "Enable"
 TextButton.TextColor3 = Color3.fromRGB(0, 194, 45)
 TextButton.TextSize = 14.000
 
@@ -9084,7 +9084,7 @@ TextButton_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
 TextButton_2.Position = UDim2.new(0.280898869, 0, 0.821428478, 0)
 TextButton_2.Size = UDim2.new(0, 194, 0, 32)
 TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "No"
+TextButton_2.Text = "Klose"
 TextButton_2.TextColor3 = Color3.fromRGB(203, 0, 0)
 TextButton_2.TextSize = 14.000
 
