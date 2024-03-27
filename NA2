@@ -26,8 +26,8 @@ no kreds to NA devs for trolling😂
  local Notify = Notification.Notify;
 
  Notify({
-     Description = "🍭fuxk that byfron shit";
-     Title = "🍭";
+     Description = "🖕🏽fuxk that byfron shit";
+     Title = "Lollypop Admin🍭";
      Duration = 5;
 
 });
@@ -15867,7 +15867,7 @@ table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInpu
    textclickbutton:TweenSize(UDim2.new(0, 32, 0, 33), "Out", "Quint",1,true)
    textclickbutton:TweenPosition(UDim2.new(0.48909232, 0, 0, 0), "Out", "Quint",1,true)
    wait(0.4)
-   textclickbutton.Text = "LA"
+   textclickbutton.Text = "🍭"
    textclickbutton.Active = true
  gui.draggable(textclickbutton)
  end
