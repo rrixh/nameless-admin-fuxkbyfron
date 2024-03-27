@@ -682,11 +682,6 @@ cmd.add({"fluxus", "flux", "fluxusremake"}, {"fluxusremake (flux)", "exekute flu
 loadstring(game:HttpGet("https://pastecode.dev/raw/DhToGLHKE9/fluxusExekutor_lulaslollipopAnya",true))()
 end)
 
-cmd.add({"antiban", "antilog", "noban"}, {"antiban (noban)", "antiban; doesnt log msgs"}, function()
-    --anti xhatlogger
-loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/antixhatlogger/main/lulaslollipop",true))()
-end)
-
 cmd.add({"hiddenfling", "hfling"}, {"hiddenfling (hfling)", "fling player by walking into them"}, function()
     wait()
     local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/NotificationUI"))();
@@ -8779,11 +8774,11 @@ print(text)
  game:GetService("Lighting").ClockTime = "24"
  end)
 
- cmd.add({"antichatlogger", "acl"}, {"antichatlogger (acl)", "Anti chat logger"}, function()
+ cmd.add({"antiban", "noban"}, {"antiban (noban)", "Anti xhat logger"}, function()
  -- Gui to Lua
  -- Version: 3.2
 
- -- Instances:
+ -- instanxes:
 
  local ScreenGui = Instance.new("ScreenGui")
  local Frame = Instance.new("Frame")
@@ -8834,7 +8829,7 @@ print(text)
  TextLabel_2.Position = UDim2.new(0.0269662924, 0, 0.162698418, 0)
  TextLabel_2.Size = UDim2.new(0, 421, 0, 115)
  TextLabel_2.Font = Enum.Font.SourceSans
- TextLabel_2.Text = "You are executing an anti-chat-log script meaning that Nameless Admin wouldnt be able to detect when you have chatted meaning if you are on mobile and use the chat to execute commands it wont work. Are you sure you want to execute this?"
+ TextLabel_2.Text = "u are exekuting anti-ban/anti-logger meaning that Roblox's system wont be able to detekt your messages so u kant be banned for anything u say. are u sure u want to exekute it?"
  TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
  TextLabel_2.TextScaled = true
  TextLabel_2.TextSize = 14.000
@@ -9222,15 +9217,15 @@ print(Time)
      if OldSetting then
        StarterGui:SetCoreGuiEnabled(CoreGuiSettings[1], CoreGuiSettings[2])
      end
-     Notify("🔹Anthony's ACL🔹", "Anti Chat and Screenshot Logger Loaded!", 15)
-     print(string.format("Anti Chat-Logger has loaded in %s seconds.", tostring(tick() - ACL_LoadTime):sub(1, 4)))
+     Notify("🍭lulas anti-ban", "ANTI XHATLOGGET AND SKREENSHOT LOADE!", 15)
+     print(string.format("Anti XHAT Logger has loaded in %s sekonds.", tostring(tick() - ACL_LoadTime):sub(1, 4)))
      wait(0.3)
      script.Parent.Parent:TweenPosition(UDim2.new(0.355, 0,1.291, 0), "Out", "Quint",1,true)
      wait(0.9)
      local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/archive/main/notificationtest"))();
      local Notify = AkaliNotif.Notify;
      Notify({
-       Description = "Anti chat log has been ran.";
+       Description = "Anti ban/anti xhatlogger has been ran.";
        Duration = 5;
 
      });
@@ -9259,7 +9254,7 @@ print(Time)
  coroutine.wrap(ELJBIKO_fake_script)()
  end)
 
- cmd.add({"chat", "message"}, {"chat <text> (message)", "Chats you, useful if youre muted"}, function(...)
+ cmd.add({"chat", "say"}, {"chat <text> (say)", "lets u speak ,good for muted"}, function(...)
   local A_1 = (...)
   local A_2 = "All"
   if game:GetService("TextChatService"):FindFirstChild("TextChannels") then
