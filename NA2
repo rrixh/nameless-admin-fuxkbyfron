@@ -2822,7 +2822,7 @@ print(Time)
  cmd.add({"commandcount", "cc"}, {"commandcount (cc)", "Counds how many commands NA has"}, function()
 
  Notify({
-   Description = "Nameless Admin currently has ".. commandcount .. " commands";
+   Description = "Lollypop Admin currently has ".. commandcount .. " commands";
    Title = "Lollypop Admin🍭";
    Duration = 5;
 
@@ -6670,25 +6670,25 @@ end
    game.Players.LocalPlayer.Character.Humanoid.Health = 0
  end)
 
- cmd.add({"admin"}, {"admin", "whitelist someone to allow them to use commands"}, function(...)
+ cmd.add({"admin"}, {"admin", "whitelist someone to allow them to use kommands on u"}, function(...)
    function ChatMessage(Message, Whisper)	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Message, Whisper or "ALl")
    end
    local Player = getPlr(...)
    if Player ~= nil and not Admin[Player.UserId] then
      Admin[Player.UserId] = {Player = Player}
-     ChatMessage("/w "..Player.Name.." [Nameless Admin] You've got admin. Prefix: ';'")
+     ChatMessage("/w "..Player.Name.." [Lollypop Admin] You've got admin. Prefix: ';'")
      wait(0.2)
-     ChatMessage("/w "..Player.Name.." [Nameless Admin Commands] glue, unglue, fling, fling2, spinfling, unspinfling, fcd, fti, fpp, fireremotes, holdhat")
+     ChatMessage("/w "..Player.Name.." [Lollypop Admin Kommands] glue, unglue, fling, fling2, spinfling, unspinfling, fcd, fti, fpp, fireremotes, holdhat")
      ChatMessage("/w "..Player.Name.." reset, commitoof, seizure, unseizure, toolorbit, lay, fall, toolspin, hatspin, sit, joke, kanye")
      Notify({
-       Description = "" .. Player.Name .. " has now been whitelisted to use commands";
+       Description = "" .. Player.Name .. " has now been whitelisted to use kommands";
        Title = "Lollypop Admin🍭";
        Duration = 15;
 
        });
    else
      Notify({
-       Description = "No player found";
+       Description = "no player found";
        Title = "Lollypop Admin🍭";
        Duration = 15;
 
@@ -6702,7 +6702,7 @@ end
    local Player = getPlr(...)
        if Player ~= nil and Admin[Player.UserId] then
          Admin[Player.UserId] = nil
-         ChatMessage("/w "..Player.Name.." You can no longer use commands")
+         ChatMessage("/w "..Player.Name.." You kan no longer use kommands")
            Notify({
          Description = "" .. Player.Name .. " is no longer an admin";
          Title = "Lollypop Admin🍭";
@@ -7290,12 +7290,12 @@ end
      wait();
 
      Notify({
-     Description = "Nameless Admin has detected you using mobile you now have a mfly button click it to enable / disable mobile flying (For easier use)";
+     Description = "Lollypop Admin has detekted you using mobile you now have a mfly button klick it to enable / disable mobile flying (for easier use)";
      Title = "Lollypop Admin🍭";
      Duration = 5;
      });
 
-   -- creates a button that u can toggle if you're flying or not
+   -- kreated a button that u kantoggle if ur flying or not
    local ScreenGui = Instance.new("ScreenGui")
    local TextButton = Instance.new("TextButton")
    local UICorner = Instance.new("UICorner")
@@ -7311,7 +7311,7 @@ end
    TextButton.Position = UDim2.new(0.933, 0,0.621, 0)
    TextButton.Size = UDim2.new(0.043, 0,0.083, 0)
    TextButton.Font = Enum.Font.SourceSansBold
-   TextButton.Text = "Fly"
+   TextButton.Text = "fly"
    TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
    TextButton.TextSize = 15.000
    TextButton.TextWrapped = true
@@ -7329,12 +7329,12 @@ end
        script.Parent.MouseButton1Click:Connect(function()
      if on == false then
  on = true
-             script.Parent.Text = "Unfly"
+             script.Parent.Text = "unfly"
  mobilefly(speed)
      elseif on == true then
  on = false
  unmobilefly()
- script.Parent.Text = "Fly"
+ script.Parent.Text = "fly"
        end
      end)
    end
@@ -7359,7 +7359,7 @@ end
      wait();
 
      Notify({
-     Description = "Fly enabled";
+     Description = "flying enabled";
      Title = "Lollypop Admin🍭";
      Duration = 5;
 
@@ -7387,7 +7387,7 @@ end
    cmdlp.Character.Humanoid.PlatformStand = false
  end)
 
- cmd.add({"noclip", "nclip", "nc"}, {"noclip", "Disable your player's collision"}, function()
+ cmd.add({"noclip", "nclip", "nc"}, {"noclip", "Disable your player's kollision"}, function()
    if connections["noclip"] then lib.disconnect("noclip") return end
    lib.connect("noclip", RunService.Stepped:Connect(function()
      if not character then return end
@@ -14735,7 +14735,7 @@ end)
    wait();
 
    Notify({
-   Description = "Nameless Admin has detected you using mobile you now have a invisible button click it to enable / disable invisibility";
+   Description = "Lollypop Admin has detekted you using mobile you now have a invisible button klick it to enable / disable invisibility";
    Title = "Lollypop Admin🍭";
    Duration = 7;
    });
