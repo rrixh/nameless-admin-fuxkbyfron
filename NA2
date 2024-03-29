@@ -194,21 +194,78 @@ kredits to whats the name
    return root
  end
 
+ local whitelist = {}
+
+function addtowl(User)
+    if not table.find(whitelist,User) then
+        table.insert(whitelist,User)
+    end
+end
+
+function removefromwl(User)
+    if table.find(whitelist,User) then
+        for i,v in whitelist do
+            if v == User then
+                table.remove(whitelist,i)
+            end
+        end
+    end
+end
+
+--whitelist function
+task.spawn(function()
+    Players.LocalPlayer.Chatted:connect(function(msg)
+        if string.find(msg, ';wl') then
+            local yes = msg:sub(5)
+            game:GetService("StarterGui"):SetCore("SendNotification",{
+              Title = "Lollypop Admin🍭", -- Required
+              Text = yes .. " has been whitelisted", -- Required
+              Icon = "" -- Optional
+            })
+            addtowl(yes)
+        elseif string.find(msg, ';unwl') then
+            local yes = msg:sub(7)
+            game:GetService("StarterGui"):SetCore("SendNotification",{
+              Title = "Lollypop Admin🍭", -- Required
+              Text = yes .. "'s whitelist has been removed", -- Required
+              Icon = "" -- Optional
+            })
+            removefromwl(yes)
+        end
+    end)
+end)
+
+function checker(User) 
+    for i,v in whitelist do
+        if  User:lower():match("^" .. v) or  User:lower():match(v) then
+            return true
+        end
+    end
+    return false
+end
+
+
  -- [[ FUNKTION TO GET A PLAYER ]] --
  local getPlr = function(Name)
    if Name:lower() == "random" then
-     return Players:GetPlayers()[math.random(#Players:GetPlayers())]
+    local random = Players:GetPlayers()[math.random(#Players:GetPlayers())]
+    if not table.find(whitelist,random.Name) then
+        return random
+    else
+        return Players:GetPlayers()[math.random(#Players:GetPlayers())]
+    end
    else
      Name = Name:lower():gsub("%s", "")
      for _, x in next, Players:GetPlayers() do
-       if x.Name:lower():match(Name) then
+       if not checker(x.Name) and x.Name:lower():match(Name) then
          return x
-       elseif x.DisplayName:lower():match("^" .. Name) then
+       elseif not checker(x.DisplayName) and x.DisplayName:lower():match("^" .. Name) then
          return x
        end
      end
    end
  end
+
 
  -- [[ MORE VARIABLES ]] --
  plr = game.Players.LocalPlayer
@@ -2876,6 +2933,7 @@ print(Time)
        Player.Character.Humanoid.Sit = true
        if User == "all" or User == "others" then
          for _,x in next, game.Players:GetPlayers() do
+			if not checker(x.DisplayName) and not checker(x.Name) then
            for i=1, 10 do
              wait(0.017)
              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 4)
@@ -2893,6 +2951,7 @@ print(Time)
              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1)
              wait(0.01)
              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1)
+		   end
              end
            end
        else
@@ -3699,9 +3758,9 @@ print(Time)
      else
        Name = Name:lower():gsub("%s", "")
        for _, x in next, game.Players:GetPlayers() do
-         if x.Name:lower():match(Name) then
+         if not checker(x.Name) and x.Name:lower():match(Name) then
            return x
-         elseif x.DisplayName:lower():match("^" .. Name) then
+         elseif not checker(x.DisplayName) and x.DisplayName:lower():match("^" .. Name) then
            return x
          end
        end
@@ -9303,7 +9362,7 @@ print(Time)
 
  local lp = game.Players.LocalPlayer
  for i,v in pairs(game.Players:GetPlayers()) do
-   if v.Name:lower():match("^"..Target:lower()) or v.DisplayName:lower():match("^"..Target:lower()) then
+   if not checker(x.DisplayName) and  not checker(x.Name) and v.Name:lower():match("^"..Target:lower()) or v.DisplayName:lower():match("^"..Target:lower()) then
      Target = v
      break
    end
@@ -9428,9 +9487,9 @@ print(Time)
   elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
     for _,x in next, Players:GetPlayers() do
       if x ~= Player then
-        if x.Name:lower():match("^"..Name) then
+        if not checker(x.Name) and x.Name:lower():match("^"..Name) then
           return x;
-        elseif x.DisplayName:lower():match("^"..Name) then
+        elseif not checker(x.DisplayName) and x.DisplayName:lower():match("^"..Name) then
           return x;
         end
       end
@@ -9653,9 +9712,9 @@ print(Time)
   elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
     for _,x in next, Players:GetPlayers() do
       if x ~= Player then
-        if x.Name:lower():match("^"..Name) then
+        if not checker(x.Name) and x.Name:lower():match("^"..Name) then
           return x;
-        elseif x.DisplayName:lower():match("^"..Name) then
+        elseif not checker(x.DisplayName) and  x.DisplayName:lower():match("^"..Name) then
           return x;
         end
       end
@@ -9837,7 +9896,9 @@ end
 
  if AllBool then
   for _,x in next, Players:GetPlayers() do
+	if not checker(x.DisplayName) and not checker(x.Name) then
     SkidFling(x)
+	end
   end
  end
 
@@ -10561,9 +10622,9 @@ getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
   elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
     for _,x in next, Players:GetPlayers() do
       if x ~= Player then
-        if x.Name:lower():match("^"..Name) then
+        if not checker(x.Name)  and  x.Name:lower():match("^"..Name) then
           return x;
-        elseif x.DisplayName:lower():match("^"..Name) then
+        elseif not checker(x.DisplayName) and  x.DisplayName:lower():match("^"..Name) then
           return x;
         end
       end
@@ -10747,7 +10808,9 @@ end
 
  if AllBool then
   for _,x in next, Players:GetPlayers() do
-    SkidFling(x)
+	if not checker(x.Name) and not checker(x.DisplayName) then
+    	SkidFling(x)
+	end
   end
  end
 
@@ -15742,6 +15805,12 @@ end
 end
 
  --[[ GUI FUNKTIONALITY ]]--
+
+
+
+
+
+
 
 -- [[ OPEN THE KOMMAND BAR ]] --
  mouse.KeyDown:Connect(function(k)
