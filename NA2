@@ -1390,6 +1390,16 @@ cmd.add({"timestop", "ts", "freezeplayers", "freezeplrs"}, {"timestop (ts, freez
 loadstring(game:HttpGet('https://pastebin.com/raw/djAd7g2W'))()
 end)
 
+cmd.add({"chatbypass", "notags", "anti"}, {"chatbypass (notags, anti)", "bypasses a lot of kuss words"}, function()
+--xhatbypass/antilog,antiban
+loadstring(game:HttpGet("https://pastecode.dev/raw/zqbxv42b/antiban-lulas-xheruONLY_lulaslollipop.m4a",true))()
+end)
+
+cmd.add({"spychat", "seewhispers", "spyy"}, {"spychat (seewhispers, spyy)", "lets u see others whispers/other things"}, function()
+-- xhat spy
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Xhat-Spy-2-6806"))()
+end)
+
 
 
 
@@ -8848,7 +8858,7 @@ print(text)
  game:GetService("Lighting").ClockTime = "24"
  end)
 
- cmd.add({"antiban", "noban"}, {"antiban (noban)", "Anti xhat logger"}, function()
+ cmd.add({"antilogger", "antilog", "al"}, {"antilogger (antilog, al)", "Anti xhat logger"}, function()
  -- Gui to Lua
  -- Version: 3.2
 
