@@ -1,6 +1,6 @@
 --[[
 skidded by lulas 
- kreds to Nameless Admin devs 
+ removed that byfron troll shit
 kredits to whats the name
 
 ╔╗───╔╗╔╗───────────────────╔╗
@@ -1372,7 +1372,10 @@ cmd.add({"destroytoggle", "dt"}, {"destroytoggle (dt) [Lollypop Hub]", "destroys
       end
 end)
 
-cmd.add({"getcoords", "coord", "gc", "position"}, {"getcoords (coord, getcoords, gc)", "gets koordinates of where u standing"}, function()
+cmd.add({"getcoords", "coords", "gc", "getkoords", "koords"}, {"getcoords (coords, gc)", "gets koordinates of ur humanoids position"}, function()
+--set koords to klip
+setclipboard(tostring(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position))
+wait()
       --getkoords
 print(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position)
       wait()
@@ -1380,7 +1383,7 @@ print(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
       local Notify = AkaliNotif.Notify;
       wait();
       Notify({
-      Description = "printed type /console";
+      Description = "koordinates kopied to klipboard";
       Title = "Lollypop Admin🍭";
       Duration = 5;
       });
@@ -1400,6 +1403,37 @@ cmd.add({"spychat", "seewhispers", "spyy"}, {"spychat (seewhispers, spyy)", "let
 loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Xhat-Spy-2-6806"))()
 end)
 
+cmd.add({"nyula", "nyu"}, {"nyula (nyu)", "nyula aimloxk for Da Hood games"}, function()
+--nyula
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/nyulachan/nyula/main/nyuladhm"))()
+end)
+
+cmd.add({"qtool", "q"}, {"qtool (Q)", "q tool for aimloxk skripts"}, function()
+-- [Q] tool
+loadstring(game:HttpGet("https://pastebin.com/raw/5ZgW4X4q",true))()
+end)
+
+cmd.add({"thehunt", "hunt"}, {"thehunt (hunt)", "skript for THE HUNT: FIRST EDITION"}, function()
+--THE HUNT SKRIPTLOADER(60+GAME SUPPORT)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/THEHUNT-skriptloader/main/60plusGames_lulaslollipop",true))()
+--[made by lulaslollipop🍭]--
+end)
+
+cmd.add({"maxmara", "free6items"}, {"maxmara (free6items)", "max mara koats adventure GET 6 free items"}, function()
+if game.PlaceId == 14905728989 then
+--MAX MARAKOATS ADVENTURE FREE 6ITEMS
+loadstring(game:HttpGet("https://pastecode.dev/raw/hxuoy7un/6FREEITEMS_lulaslollipop.mp4",true))()
+      
+else
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/kustomnotif/main/notifikation_lulaslollipop",true))()
+Notify("wrong game", "Teleporting...", 5)
+task.wait(2)
+local PlaceId = 14905728989 -- MaxMaraKoatAdventure
+
+game:GetService("TeleportService"):Teleport(PlaceId, game:GetService("Players").LocalPlayer)
+    end
+end)
 
 
 
@@ -2943,7 +2977,7 @@ print(Time)
        Player.Character.Humanoid.Sit = true
        if User == "all" or User == "others" then
          for _,x in next, game.Players:GetPlayers() do
-			if not checker(x.DisplayName) and not checker(x.Name) then
+      if not checker(x.DisplayName) and not checker(x.Name) then
            for i=1, 10 do
              wait(0.017)
              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 4)
@@ -2961,7 +2995,7 @@ print(Time)
              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1)
              wait(0.01)
              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = x.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -1)
-		   end
+       end
              end
            end
        else
@@ -9906,9 +9940,9 @@ end
 
  if AllBool then
   for _,x in next, Players:GetPlayers() do
-	if not checker(x.DisplayName) and not checker(x.Name) then
+  if not checker(x.DisplayName) and not checker(x.Name) then
     SkidFling(x)
-	end
+  end
   end
  end
 
@@ -10818,9 +10852,9 @@ end
 
  if AllBool then
   for _,x in next, Players:GetPlayers() do
-	if not checker(x.Name) and not checker(x.DisplayName) then
-    	SkidFling(x)
-	end
+  if not checker(x.Name) and not checker(x.DisplayName) then
+      SkidFling(x)
+  end
   end
  end
 
