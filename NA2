@@ -6,7 +6,6 @@ kredits to whats the name
 ╔╗───╔╗╔╗───────────────────╔╗
 ║║───║║║║───────────────────║║
 ║║╔══╣║║║╔╗─╔╦══╦══╦══╗╔══╦═╝╠╗╔╦╦═╗
-║║║╔╗║║║║║║─║║╔╗║╔╗║╔╗║║╔╗║╔╗║╚╝╠╣╔╗╗
 ║╚╣╚╝║╚╣╚╣╚═╝║╚╝║╚╝║╚╝║║╔╗║╚╝║║║║║║║║
 ╚═╩══╩═╩═╩═╗╔╣╔═╩══╣╔═╝╚╝╚╩══╩╩╩╩╩╝╚╝
 ─────────╔═╝║║║────║║
@@ -1394,8 +1393,8 @@ loadstring(game:HttpGet('https://pastebin.com/raw/djAd7g2W'))()
 end)
 
 cmd.add({"chatbypass", "notags", "anti"}, {"chatbypass (notags, anti)", "bypasses a lot of kuss words"}, function()
---xhatbypass/antilog,antiban
-loadstring(game:HttpGet("https://pastecode.dev/raw/zqbxv42b/antiban-lulas-xheruONLY_lulaslollipop.m4a",true))()
+--anti-ban
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/antiban-antilogger/main/xhatbypass_lulaslollipop",true))()
 end)
 
 cmd.add({"spychat", "seewhispers", "spyy"}, {"spychat (seewhispers, spyy)", "lets u see others whispers/other things"}, function()
@@ -1435,8 +1434,36 @@ game:GetService("TeleportService"):Teleport(PlaceId, game:GetService("Players").
     end
 end)
 
+cmd.add({"metasaintugc", "metasaint", "wingsoffaith"}, {"MetaSaintUgc (MetaSaint, WingsOfFaith)", "get Wings of Faith"}, function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/kustomnotif/main/notifikation_lulaslollipop",true))()
+Notify("sold out", "event for this game ended", 5)
 
+if game.PlaceId == 15298842350 then
+-- teleport to metasaint
+Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(398.1275329589844, 54.8911247253418, 3389.714599609375)
+else
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/kustomnotif/main/notifikation_lulaslollipop",true))()
+Notify("wrong game", "Teleporting...", 5)
+wait(4)
+-- go to MetaSaint
 
+game:GetService("TeleportService"):Teleport(15298842350, game:GetService("Players").LocalPlayer)
+end
+end)
+
+cmd.add({"anticheatbypass", "anticheat", "cheatbypass", "nocheat", "antixheat", "xheatbypass"}, {"anticheat (anticheatbypass, cheatbypass, nocheat)", "anti instanxe, only works in some games"}, function()
+wait()
+      local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/NotificationUI"))();
+      local Notify = AkaliNotif.Notify;
+      wait();
+      Notify({
+      Description = "Anti-cheat & Anti-Instanxe enabled";
+      Title = "Lollypop Admin🍭";
+      Duration = 5;
+      });
+--antixheatbypass/anti-Instanxe
+loadstring(game:HttpGet("https://pastecode.dev/raw/0jvzh3eh/antiInstanxe-antixheatbypass_lulaslollipop.zip",true))()
+end)
 
 
 
@@ -6803,10 +6830,10 @@ end
  end)
  end)
 
- cmd.add({"anticlientkick", "antickick"}, {"anticlientkick (antickick)", "Makes local scripts not able to kick you"}, function()
+ cmd.add({"anticlientkick", "antikick"}, {"anticlientkick (antikick)", "Makes lokal skripts not able to kixk u"}, function()
   if not hookmetamethod then 
     Notify({
-      Description = "Your executor does not support anticlientkick";
+      Description = "Your exekutor does not support anti klient kick";
       Title = "Lollypop Admin🍭";
       Duration = 5;
 
@@ -6814,7 +6841,7 @@ end
       end
   oldhmmi = hookmetamethod(game, "__index", function(self, method)
     if self == LocalPlayer and method:lower() == "kick" then
-      return print("Expected ':' not '.' calling member function Kick")
+      return print("Expekted ':' not '.' kalling member funktion Kick")
     end
     return oldhmmi(self, method)
   end)
@@ -6822,7 +6849,7 @@ end
     if self == LocalPlayer and getnamecallmethod():lower() == "kick" then
       return
       Notify({
-        Description = "A kick was just attempted but was blocked";
+        Description = "a kick was just attempted but was bloxked✅";
         Title = "Lollypop Admin🍭";
         Duration = 5;
 
@@ -6831,7 +6858,7 @@ end
     return oldhmmnc(self, ...)
       end)
  Notify({
- Description = "Anti kick executed";
+ Description = "Anti kick exekuted";
  Title = "Lollypop Admin🍭";
  Duration = 5;
 
@@ -6844,13 +6871,13 @@ end
    loadstring(game:HttpGet("https://raw.githubusercontent.com/L1ghtingBolt/FraktureSS/master/unobfuscated.lua"))()
  end)
 
- cmd.add({"jobid"}, {"jobid", "Copies your job id"}, function()
+ cmd.add({"jobid"}, {"jobid", "kopied your job id"}, function()
    local jobId = 'Roblox.GameLauncher.joinGameInstance('..PlaceId..', "'..JobId..'")'
    setclipboard(jobId)
    wait();
 
  Notify({
- Description = "Copied your jobid (" .. jobId .. ")";
+ Description = "kopied jobid/gameid(" .. jobId .. ")";
  Title = "Lollypop Admin🍭";
  Duration = 5;
 
