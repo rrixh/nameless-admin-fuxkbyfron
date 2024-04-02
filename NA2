@@ -1,4 +1,4 @@
---[[
+--[[ 🍭 Admin (LA)
 skidded by lulas 
  removed that byfron troll shit
 kredits to whats the name
@@ -54,7 +54,7 @@ kredits to whats the name
 
  -- [[ PREFIX AND OTHER STUFF. ]] -- 
  local opt = {
-   prefix = readfile("Nameless-Admin/Prefix.txt", ';'), -- If player's exploit has the custom file funktion support it reads the prefix file to get prefix
+   prefix = readfile("Nameless-Admin/Prefix.txt", ';'), -- If players exploit has the kustom file funktion support it reads the prefix file to get prefix
    tupleSeparator = ',',	-- ;ff me,others,all | ;ff me/others/all
    ui = {					-- never did anything with this
 
@@ -1363,14 +1363,6 @@ cmd.add({"dflingmethod", "dfm", "dflingmethod"}, {"deathflingmethod (dflingmetho
 loadstring(game:HttpGet("https://pastecode.dev/raw/E7GMNU4Q/99fail-fling_lulaslollipop",true))()
 end)
 
-cmd.add({"destroytoggle", "dt"}, {"destroytoggle (dt) [Lollypop Hub]", "destroys toggle in lollypop hub"}, function()--toggleframe:destroyer
-      for i,v in pairs(game.CoreGui:GetDescendants()) do
-       if v.Name == "ScreenGui" then
-        v:Destroy()
-       end
-      end
-end)
-
 cmd.add({"getcoords", "coords", "gc", "getkoords", "koords"}, {"getcoords (coords, gc)", "gets koordinates of ur humanoids position"}, function()
 --set koords to klip
 setclipboard(tostring(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position))
@@ -1422,7 +1414,7 @@ cmd.add({"maxmara", "free6items"}, {"maxmara (free6items)", "max mara koats adve
 if game.PlaceId == 14905728989 then
 --MAX MARAKOATS ADVENTURE FREE 6ITEMS
 loadstring(game:HttpGet("https://pastecode.dev/raw/hxuoy7un/6FREEITEMS_lulaslollipop.mp4",true))()
-      
+
 else
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/kustomnotif/main/notifikation_lulaslollipop",true))()
@@ -1473,7 +1465,6 @@ end)
 
 
 --[END OF MY 👺👺KOMMANDS]--
-
 
 
 
@@ -1606,19 +1597,19 @@ cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/archive/main/NamelessAdminPlugin"))();
  end)
 
- cmd.add({"prefix"}, {"prefix <prefix>", "Changes the admin prefix"}, function(...)
+ cmd.add({"prefix"}, {"prefix <prefix>", "xhanges the admin prefix"}, function(...)
  PrefixChange = (...)
 
  if PrefixChange == nil then
  Notify({
- Description = "Please enter a valid prefix";
+ Description = "please enter a valid prefix";
  Title = "Lollypop Admin🍭";
  Duration = 5;
 
  });
  elseif PrefixChange == "p" or PrefixChange == "[" or PrefixChange == "P" then
    Notify({
-     Description = "idk why but this prefix breaks changing the prefix so pick smthing else alr?";
+     Description = "idk why but this prefix breaks changing the prefix so pick smthing else aight?";
      Title = "Lollypop Admin🍭";
      Duration = 5;
 
@@ -1626,7 +1617,7 @@ cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
    else
  opt.prefix = PrefixChange
  Notify({
- Description = "Prefix set to " .. PrefixChange .. "";
+ Description = "prefix set to " .. PrefixChange .. "";
  Title = "Lollypop Admin🍭";
  Duration = 5;
 
@@ -1640,14 +1631,14 @@ cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
 
  if PrefixChange == nil then
  Notify({
- Description = "Please enter a valid prefix";
+ Description = "please enter a valid prefix";
  Title = "Lollypop Admin🍭";
  Duration = 5;
 
  });
  elseif PrefixChange == "p" or PrefixChange == "[" or PrefixChange == "P" then
    Notify({
-     Description = "idk why but this prefix breaks changing the prefix so pick smthing else alr?";
+     Description = "idk why but this prefix breaks changing the prefix so pick smthing else aight?";
      Title = "Lollypop Admin🍭";
      Duration = 5;
 
@@ -1656,7 +1647,7 @@ cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
  writefile("Nameless-Admin\\Prefix.txt", PrefixChange)
  opt.prefix = PrefixChange
  Notify({
- Description = "Prefix saved to '" .. PrefixChange .. "'";
+ Description = "prefix saved to '" .. PrefixChange .. "'";
  Title = "Lollypop Admin🍭";
  Duration = 5;
 
@@ -1666,7 +1657,7 @@ cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
 
  --[ UTILITY ]--
 
- cmd.add({"chatlogs", "clogs"}, {"chatlogs (clogs)", "Open the chat logs"}, function()
+ cmd.add({"chatlogs", "clogs"}, {"chatlogs (clogs)", "open the xhat logs"}, function()
    gui.chatlogs()
  end)
 
