@@ -1179,7 +1179,7 @@ end)
 
 cmd.add({"usernameesp", "useresp", "uesp"}, {"usernameesp (useresp, uesp)", "see player users in red"}, function()
     --useresp
-loadstring(game:HttpGet("https://pastebin.com/raw/hpMC6ULU"))()
+loadstring(game:HttpGet("https://pastecode.dev/raw/6x0cea9i/usernameESP.lua",true))()
     wait()
     local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/NotificationUI"))();
     local Notify = AkaliNotif.Notify;
@@ -1457,6 +1457,10 @@ wait()
 loadstring(game:HttpGet("https://pastecode.dev/raw/0jvzh3eh/antiInstanxe-antixheatbypass_lulaslollipop.zip",true))()
 end)
 
+cmd.add({"lasttoleave", "ltl"}, {"lasttoleave (ltl)", "use OP skript"}, function()
+    --last to leavelula:8305160617
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/last-to-leave/main/obf-8Adf82hs82hs8273891918_rrixh-lulaslollipop",true))()
+end)
 
 
 
@@ -11439,7 +11443,7 @@ until glueloop == false
     if TPWalk == true then
      if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").MoveDirection.Magnitude > 0 then
        if Speed then
-          game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").MoveDirection * Speed * TPWalking * 10)
+          game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").MoveDirection * Speed * TPWalking * 50)
        else
           game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").MoveDirection * TPWalking * 10)
        end
