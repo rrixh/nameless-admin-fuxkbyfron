@@ -1462,6 +1462,11 @@ cmd.add({"lasttoleave", "ltl"}, {"lasttoleave (ltl)", "use OP skript"}, function
 loadstring(game:HttpGet("https://raw.githubusercontent.com/rrixh/last-to-leave/main/obf-8Adf82hs82hs8273891918_rrixh-lulaslollipop",true))()
 end)
 
+cmd.add({"toducky", "duckytycoon", "duckugc", "ducky"}, {"duckytycoon (duckugc, ducky)", "go to duxky tykoon kause its hard to find"}, function()
+--duxky tykoon
+game:GetService("TeleportService"):Teleport(15106458515, game:GetService("Players").LocalPlayer)
+end)
+
 
 
 
