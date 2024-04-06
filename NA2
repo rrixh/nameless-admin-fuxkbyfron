@@ -2560,11 +2560,11 @@ cmd.add({"scripthub"}, {"scripthub", "Thanks to scriptblox api"}, function()
      Offset = tonumber(...)
  end)
 
- cmd.add({"godmode", "god"}, {"godmode (god)", "Makes you unable to be killed"}, function()
+ cmd.add({"godmode2", "god2"}, {"godmode2 (god2)", "invinixbility"}, function()
    loadstring(game:HttpGet(('https://pastebin.com/raw/bbyuynM1'),true))()
  end)
 
- cmd.add({"clickfling", "mousefling"}, {"mousefling (clickfling)", "Fling a player by clicking them"}, function()
+ cmd.add({"clickfling", "mousefling", "mfling", "cfling"}, {"mousefling (clickfling, mfling, cfling)", "fling a player by pressing them"}, function()
    local Players = game:GetService("Players")
    local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
 
@@ -3095,11 +3095,11 @@ print(Time)
    --i am so not putting an emulator as a command here
  end)
 
- --[ LOCALPLAYER ]--
+ --[ LOKALPLAYER ]--
  local function respawn()
  cf = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
  game.Players.LocalPlayer.Character.Humanoid.Health = 0
- player.CharacterAdded:wait(1); wait(0.2);
+ player.CharacterAdded:wait(0.0000000000001); wait(0.0000000000000001);
    character:WaitForChild("HumanoidRootPart").CFrame = cf
    end
 
