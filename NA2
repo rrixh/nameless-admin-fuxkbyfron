@@ -1380,6 +1380,19 @@ print(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
       });
 end)
 
+cmd.add({"copygameid", "cgameid", "gameid", "gid"}, {"copygameid (cgameid, gameid, gid)", "Copies the id of the game youre in"}, function()
+ setclipboard(game.PlaceId)
+wait()
+      local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/NotificationUI"))();
+      local Notify = AkaliNotif.Notify;
+      wait();
+      Notify({
+      Description = "game id kopied to klipboard";
+      Title = "Lollypop Admin🍭";
+      Duration = 5;
+      });
+ end)
+
 cmd.add({"timestop", "ts", "freezeplayers", "freezeplrs"}, {"timestop (ts, freezeplayers, freezeplrs)", "kommandInfo"}, function()--timestopper/freezplrs
 loadstring(game:HttpGet('https://pastebin.com/raw/djAd7g2W'))()
 end)
@@ -8296,10 +8309,6 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
        end
      end
    end
- end)
-
- cmd.add({"copygameid", "cgameid"}, {"copygameid (cgameid)", "Copies the id of the game youre in"}, function()
- setclipboard(game.PlaceId)
  end)
 
  cmd.add({"lowhold"}, {"lowhold", "Boombox low hold"}, function()
