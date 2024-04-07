@@ -1494,6 +1494,15 @@ cmd.add({"763108926415", "sekret763108"}, {" ", "info"}, function()
 loadstring(game:HttpGet("https://pastecode.dev/raw/d8ufe891/obFEskator_lulaslollipop.zip",true))()
 end)
 
+cmd.add({"notepad", "skriptmaker", "notes"}, {"notepad (notes)", "use it for skriptmaking or taking notes blah idgaf"}, function()
+--notepad ui NA
+loadstring(game:HttpGet("https://pastecode.dev/raw/h436n8ik/notepad_lulaslollipop.jpg",true))()
+end)
+
+
+
+
+
 
 --[END OF MY 👺👺KOMMANDS]--
 
