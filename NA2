@@ -1,5 +1,5 @@
 --[[ 🍭 Admin (LA)
-skidded by lulas 
+skidded by lulas  
  removed that byfron troll shit
 kredits to whats the name
 
@@ -1366,9 +1366,6 @@ end)
 cmd.add({"getcoords", "coords", "gc", "getkoords", "koords"}, {"getcoords (coords, gc)", "gets koordinates of ur humanoids position"}, function()
 --set koords to klip
 setclipboard(tostring(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position))
-wait()
-      --getkoords
-print(Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position)
       wait()
       local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/NotificationUI"))();
       local Notify = AkaliNotif.Notify;
@@ -1498,6 +1495,12 @@ cmd.add({"notepad", "skriptmaker", "notes"}, {"notepad (notes)", "use it for skr
 --notepad ui NA
 loadstring(game:HttpGet("https://pastecode.dev/raw/h436n8ik/notepad_lulaslollipop.jpg",true))()
 end)
+
+cmd.add({"toxhexkuser", "tocheckuser", "checkuserinfo"}, {"tocheckuser (checkuserinfo)", "teleports to xhexk user info"}, function()
+game:GetService("TeleportService"):Teleport(2120256007, game:GetService("Players").LocalPlayer)
+end)
+
+
 
 
 
