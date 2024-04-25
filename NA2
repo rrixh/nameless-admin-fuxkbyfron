@@ -1496,12 +1496,839 @@ cmd.add({"notepad", "skriptmaker", "notes"}, {"notepad (notes)", "use it for skr
 loadstring(game:HttpGet("https://pastecode.dev/raw/h436n8ik/notepad_lulaslollipop.jpg",true))()
 end)
 
-cmd.add({"toxhexkuser", "tocheckuser", "checkuserinfo"}, {"tocheckuser (checkuserinfo)", "teleports to xhexk user info"}, function()
+cmd.add({"toxhexkuser", "tocheckuser", "checkuserinfo", "toplayerinfo"}, {"tocheckuser (checkuserinfo, toplayerinfo)", "teleports to xhexk user info"}, function()
 game:GetService("TeleportService"):Teleport(2120256007, game:GetService("Players").LocalPlayer)
 end)
 
+--  [ OP KOMMANDS ] --
 
+cmd.add({"fix"}, {"fix", "turns player baxk to normal "}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+    local pchar = gPlayers[v].Character
 
+      pchar.Torso.Neck.C0 = CFrame.new(0,1,0) * CFrame.Angles(math.rad(90),math.rad(180),0)
+      pchar.Torso['Right Shoulder'].C0 = CFrame.new(1,0.5,0) * CFrame.Angles(0,math.rad(90),0)
+      pchar.Torso['Left Shoulder'].C0 = CFrame.new(-1,0.5,0) * CFrame.Angles(0,math.rad(-90),0)
+      pchar.Torso['Right Hip'].C0 = CFrame.new(1,-1,0) * CFrame.Angles(0,math.rad(90),0)
+      pchar.Torso['Left Hip'].C0 = CFrame.new(-1,-1,0) * CFrame.Angles(0,math.rad(-90),0)
+
+      for i,v in pairs(pchar.Head:GetChildren()) do
+        if v:IsA('SpecialMesh') then
+          v:Destroy()
+        end
+      end
+
+    if Player.Character:FindFirstChild('Shirt') ~= nil then	
+      Player.Character.Shirt:Destroy()	
+    end
+    if Player.Character:FindFirstChild('Pants') ~= nil then
+      Player.Character.Pants:Destroy()
+    end
+    if Player.Character:FindFirstChild('Shirt Graphic') ~= nil then
+      Player.Character['Shirt Graphic'].Graphic = ''
+    end
+
+    local HeadMesh = Instance.new('SpecialMesh', pchar.Head)
+    HeadMesh.MeshType = 'Head'
+    HeadMesh.Scale = Vector3.new(1.25, 1.25, 1.25)
+
+    Player.Character['Body Colors'].HeadColor = BrickColor.new('Cool yellow')
+    Player.Character['Body Colors'].LeftArmColor = BrickColor.new('Cool yellow')
+    Player.Character['Body Colors'].LeftLegColor = BrickColor.new('Medium blue')
+    Player.Character['Body Colors'].RightArmColor = BrickColor.new('Cool yellow')
+    Player.Character['Body Colors'].RightLegColor = BrickColor.new('Medium blue')
+    Player.Character['Body Colors'].TorsoColor = BrickColor.new('Bright blue')
+    for _,v in pairs(Player.Character:GetChildren()) do
+      if v:IsA('Hat') then
+        v:Destroy()
+      end
+    end
+    end
+end)
+
+cmd.add({"box"}, {"box", "kreates a box around plr"}, function(args)
+local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        local SB = Instance.new('SelectionBox', pchar)
+        SB.Adornee = SB.Parent
+        SB.Color = BrickColor.new('' .. (args[2]))
+    end
+end)
+
+cmd.add({"unbox"}, {"unbox", "takes away box frm player"}, function(args)
+local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        for i,v in pairs(gPlayers[v].Character:GetChildren()) do
+      if v:IsA('SelectionBox') then
+        v:Destroy()
+      end
+      end
+    end
+end)
+
+cmd.add({"jail"}, {"jail", "jails player"}, function(args)
+local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=gPlayers[v].Character
+        local JailPlayer = DATA.JAIL:Clone()
+      JailPlayer.Parent = game.Workspace
+      JailPlayer:MoveTo(pchar.Torso.Position)
+      JailPlayer.Name = 'JAIL_' .. gPlayers[v].Name
+    if pchar:FindFirstChild('HumanoidRootPart') then
+      pchar.HumanoidRootPart.CFrame = JailPlayer.MAIN.CFrame
+    end		
+    end
+end)
+
+cmd.add({"unjail"}, {"unjail", "remove jail frm player"}, function(args)
+local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+    game.Workspace['JAIL_' .. gPlayers[v].Name]:Destroy()
+  end
+end)
+
+cmd.add({"kreeper"}, {"kreeper", "make the plr a kreeper"}, function(args)
+ local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+  local pchar = gPlayers[v].Character
+        if gPlayers[v] and pchar and pchar:findFirstChild('Torso') then
+            if pchar:FindFirstChild('Shirt') then
+              pchar.Shirt.Parent = pchar.Torso
+            end
+            if pchar:FindFirstChild('Pants') then
+              pchar.Pants.Parent = pchar.Torso
+            end
+            if pchar:FindFirstChild('Shirt Graphic') then
+              pchar['Shirt Graphic'].Graphic = ''
+            end
+            for i,v in pairs(pchar:GetChildren()) do
+              if v:IsA('Hat') then
+                v:Destroy()
+              end
+            end
+            pchar.Torso.Neck.C0 = CFrame.new(0,1,0) * CFrame.Angles(math.rad(90),math.rad(180),0)
+            pchar.Torso['Right Shoulder'].C0 = CFrame.new(0,-1.5,-.5) * CFrame.Angles(0,math.rad(90),0)
+            pchar.Torso['Left Shoulder'].C0 = CFrame.new(0,-1.5,-.5) * CFrame.Angles(0,math.rad(-90),0)
+            pchar.Torso['Right Hip'].C0 = CFrame.new(0,-1,.5) * CFrame.Angles(0,math.rad(90),0)
+            pchar.Torso['Left Hip'].C0 = CFrame.new(0,-1,.5) * CFrame.Angles(0,math.rad(-90),0)
+            pchar['Body Colors'].HeadColor = BrickColor.new('Bright green')
+            pchar['Body Colors'].LeftArmColor = BrickColor.new('Bright green')
+            pchar['Body Colors'].LeftLegColor = BrickColor.new('Bright green')
+            pchar['Body Colors'].RightArmColor = BrickColor.new('Bright green')
+            pchar['Body Colors'].RightLegColor = BrickColor.new('Bright green')
+            pchar['Body Colors'].TorsoColor = BrickColor.new('Bright green')
+        end
+    end
+end)
+
+cmd.add({"unkreeper", "unkreeper"}, {"unkreeper", "plr baxk to normal"}, function(args)
+local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      execCmd('fix' .. gPlayers[v], Player)
+  end
+end)
+
+cmd.add({"shrek", "ogre"}, {"shrek (ogre)", "makes player shrek"}, function(args)
+local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    local pchar = gPlayers[v].Character
+    for i,v in pairs(pchar:GetChildren()) do
+      if v:IsA('Hat') or v:IsA('CharacterMesh') or v:IsA('Shirt') or v:IsA('Pants') then
+        v:Destroy()
+      end
+    end
+    for i,v in pairs(pchar.Head:GetChildren()) do
+      if v:IsA('Decal') or v:IsA('SpecialMesh')then
+        v:Destroy()
+      end
+    end
+
+    local mesh = Instance.new('SpecialMesh', pchar.Head)
+    mesh.MeshType = 'FileMesh'
+    pchar.Head.Mesh.MeshId = 'http://www.roblox.com/asset/?id=19999257'
+    pchar.Head.Mesh.Offset = Vector3.new(-0.1, 0.1, 0)
+    pchar.Head.Mesh.TextureId = 'http://www.roblox.com/asset/?id=156397869'
+
+    local Shirt = Instance.new('Shirt', gPlayers[v].Character)
+    local Pants = Instance.new('Pants', gPlayers[v].Character)
+
+    Shirt.ShirtTemplate = 'rbxassetid://133078194'
+    Pants.PantsTemplate = 'rbxassetid://133078204'
+  end
+end)
+
+cmd.add({"unshrek", "unogre"}, {"unshrek (unogre)", "turn player baxk to normal"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      execCmd('fix' .. gPlayers[v], Player)
+  end
+end)
+
+cmd.add({"nuke"}, {"nuke", "nukes player"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+    local pchar = gPlayers[v].Character
+    if gPlayers[v] and pchar and pchar:FindFirstChild('Torso')  then
+      local nuke = Instance.new('Part', game.Workspace)
+      nuke.Anchored = true
+      nuke.CanCollide = false
+      nuke.FormFactor = 'Symmetric'
+      nuke.Shape = 'Ball'
+      nuke.Size = Vector3.new(1,1,1)
+      nuke.BrickColor = BrickColor.new('New Yeller')
+      nuke.Transparency = 0.5
+      nuke.Reflectance = 0.2
+      nuke.TopSurface = 0
+      nuke.BottomSurface = 0
+      nuke.Touched:connect(function (hit)
+        if hit and hit.Parent then
+          local boom = Instance.new('Explosion', game.Workspace)
+          boom.Position = hit.Position
+          boom.BlastRadius = 11
+          boom.BlastPressure = math.huge
+        end
+      end)
+      local CF = pchar.Torso.CFrame
+      nuke.CFrame = CF
+      for i = 1,333 do
+        nuke.Size = nuke.Size + Vector3.new(3,3,3)
+        nuke.CFrame = CF
+        wait(1/44)
+      end
+      nuke:Destroy()
+    end
+  end
+end)
+
+cmd.add({"infect", "infekt"}, {"infect (infekt)", "infekts player"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+    function infect(rip)
+    local pchar = gPlayers[v].Character
+      for i,v in pairs(pchar:GetChildren()) do
+        if v:IsA('Hat') or v:IsA('Shirt') or v:IsA('Pants') then
+          v:Destroy()
+        end
+      end
+      if pchar.Torso:FindFirstChild('roblox') then
+        pchar.Torso.roblox:Destroy()
+      end
+      if pchar.Head:FindFirstChild('face') then
+        pchar.Head.face.Texture = 'http://www.roblox.com/asset/?id=94634491'
+      end
+      if pchar:FindFirstChild('Body Colors') then
+        local Colors = pchar['Body Colors']
+        local Skin = BrickColor.new('Pastel green')
+        local Clothes = BrickColor.new('Reddish brown')
+        Colors.HeadColor = Skin
+        Colors.LeftArmColor = Skin
+        Colors.RightArmColor = Skin
+        Colors.LeftLegColor = Clothes
+        Colors.RightLegColor = Clothes
+        Colors.TorsoColor = Clothes
+      end
+      local w1 = Instance.new('Weld', pchar)
+      w1.Part0 = pchar['Right Arm']
+      w1.Part1 = pchar.Torso
+      w1.C0 = CFrame.new(-1.5, 0.5, 0.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(0), math.rad(0))
+      local w2 = Instance.new('Weld', pchar)
+      w2.Part0 = pchar['Left Arm']
+      w2.Part1 = pchar.Torso
+      w2.C0 = CFrame.new(1.5, 0.5, 0.5) * CFrame.fromEulerAnglesXYZ(math.rad(-90), math.rad(0), math.rad(0))
+      local rip = false
+      local connect1 = pchar['Left Arm'].Touched:connect(function(hit)
+        if connect1 == false then
+          connect1 = true
+          if game.Players:FindFirstChild(hit.Parent.Name) then
+            infect(game.Players[hit.Parent.Name])
+          end
+          wait(0.5)
+          connect1 = true
+        end
+      end)
+      local connect2 = pchar['Right Arm'].Touched:connect(function(hit)
+        if connect2 == false then
+          connect2 = true
+          if game.Players:FindFirstChild(hit.Parent.Name) then
+            infect(game.Players[hit.Parent.Name])
+          end
+          wait(0.5)
+          connect2 = true
+        end
+      end)
+      local IV = Instance.new('IntValue', pchar)
+      IV.Name = 'Infected'
+      IV.Value = 0
+      IV.Changed:connect(function()
+        connect1:disconnect()
+        connect2:disconnect()
+      end)
+    end
+    infect(v)
+  end
+end)
+
+cmd.add({"uninfect", "uninfekt"}, {"uninfect (uninfekt)", "plr baxk to normal"}, function(args)
+local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      execCmd('fix' .. gPlayers[v], Player)
+  end
+end)
+
+cmd.add({"duxk", "duck"}, {"duck (duxk)", "makes plr head a duxk"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      for i,v in pairs(pchar.Torso:GetChildren()) do
+        if v:IsA('Decal') then
+          v:Destroy()
+        end
+      end
+      for i,v in pairs(pchar:GetChildren()) do
+        if v:IsA('Hat') then
+          v:Destroy()
+        end
+      end
+      for i,v in pairs(pchar.Head:GetChildren()) do
+        if v:IsA('Decal') then
+          v:Destroy()
+        end
+      end
+      local duck = Instance.new('SpecialMesh', pchar.Torso)
+      duck.MeshType = 'FileMesh'
+      duck.MeshId = 'http://www.roblox.com/asset/?id=9419831'
+      duck.TextureId = 'http://www.roblox.com/asset/?id=9419827'
+      duck.Scale = Vector3.new(5, 5, 5)
+      pchar.Head.Transparency = 1
+      pchar['Left Arm'].Transparency = 1
+      pchar['Right Arm'].Transparency = 1
+      pchar['Left Leg'].Transparency = 1
+      pchar['Right Leg'].Transparency = 1
+  end
+end)
+
+cmd.add({"unduck", "unduxk"}, {"unduck (unduxk)", "takes duxk head off"}, function(args)
+local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      execCmd('fix' .. gPlayers[v], Player)
+  end
+end)
+
+cmd.add({"disable"}, {"disable", "remove players humanoid"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+    local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('Humanoid') then
+       pchar.Humanoid.Name = 'HUMANOID_' .. gPlayers[v].Name
+       local humanoid = pchar['HUMANOID_' .. gPlayers[v].Name]
+       humanoid.Parent = game.ContextActionService
+      end
+  end
+end)
+
+cmd.add({"enable"}, {"enable", "gives player humanoid"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+    local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('Humanoid') then
+        return
+      else
+        local humanoid = game.ContextActionService['HUMANOID_' .. gPlayers[v].Name]
+        humanoid.Parent = pchar
+        humanoid.Name = 'Humanoid'
+      end
+  end
+end)
+
+cmd.add({"loopsit", "ls"}, {"loopsit (ls)", "loopsits player"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('LoopSit') then
+        pchar.LoopSit.Name = 'NotLoopSit'
+        wait(0.1)
+        pchar.NotLoopSit:Destroy()
+      end
+      local LoopSit = Instance.new('StringValue', pchar)
+      LoopSit.Name = 'LoopSit'
+      repeat wait(0.1)
+        pchar.Humanoid.Sit = true
+      until LoopSit.Name == 'NotLoopSit'
+  end
+end)
+
+cmd.add({"unloopsit", "noloopsit", "unls", "nols"}, {"unloopsit (unls)", "stops loopsitting player"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('LoopSit') then
+        pchar.LoopSit.Name = 'NotLoopSit'
+        wait(0.1)
+        pchar.NotLoopSit:Destroy()
+      end
+  end
+end)
+
+cmd.add({"loopjump", "lj"}, {"loopjump (lj)", "loopjumps player"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('LoopJump') then
+        pchar.LoopJump.Name = 'NotLoopJump'
+        wait(0.1)
+        pchar.NotLoopJump:Destroy()
+      end
+      local LoopJump = Instance.new('StringValue', pchar)
+      LoopJump.Name = 'LoopJump'
+      repeat wait(0.1)
+        pchar.Humanoid.Jump = true
+      until LoopJump.Name == 'NotLoopJump'
+  end
+end)
+
+cmd.add({"unloopjump", "unlj"}, {"unloopjump (unlj)", "stops loopjumping player"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('LoopJump') then
+        pchar.LoopJump.Name = 'NotLoopJump'
+        wait(0.1)
+        pchar.NotLoopJump:Destroy()
+      end
+  end
+end)
+
+cmd.add({"ayylmao", "ayy"}, {"ayylmao (ayy)", "lol"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      if pchar:FindFirstChild('Shirt') then
+        pchar.Shirt:Destroy()
+      end
+      if pchar:FindFirstChild('Pants') then
+        pchar.Pants:Destroy()
+      end
+      if pchar:FindFirstChild('Shirt Graphic') then
+        pchar['Shirt Graphic'].Graphic = ''
+      end
+      for i,v in pairs(pchar:GetChildren()) do
+        if v:IsA('Hat') then
+          v:Destroy()
+        end
+      end
+      local ayylmao = DATA.ayylmao:Clone()
+      ayylmao.Parent = pchar
+      local BC = pchar['Body Colors']
+      BC.HeadColor = BrickColor.new('Fossil')
+      BC.LeftArmColor = BrickColor.new('Fossil')
+      BC.LeftLegColor = BrickColor.new('Fossil')
+      BC.RightArmColor = BrickColor.new('Fossil')
+      BC.RightLegColor = BrickColor.new('Fossil')
+      BC.TorsoColor = BrickColor.new('Fossil')
+  end
+end)
+
+--// KAPE FUNKTION \\--
+
+local capeColor = 1012
+
+function Cape(playerCaped)
+
+if playerCaped.Character:FindFirstChild('Cape') ~= nil then
+  playerCaped.Character.Cape:Destroy()
+end
+
+repeat
+  wait()
+until playerCaped and playerCaped.Character and playerCaped.Character:FindFirstChild('Torso')
+
+local Torso = playerCaped.Character.Torso
+
+local Cape = Instance.new('Part', Torso.Parent)
+Cape.Name = 'Cape'
+Cape.Anchored = false
+Cape.CanCollide = false
+Cape.TopSurface = 0
+Cape.BottomSurface = 0
+Cape.BrickColor = BrickColor.new('' .. capeColor)
+Cape.Material = 'Neon'
+Cape.formFactor = 'Custom'
+Cape.Size = Vector3.new(0.2,0.2,0.2)
+
+local msh = Instance.new('BlockMesh', Cape)
+msh.Scale = Vector3.new(9,17.5,.5)
+
+local motor1 = Instance.new('Motor', Cape)
+motor1.Part0 = Cape
+motor1.Part1 = Torso
+
+motor1.MaxVelocity = 1
+motor1.C0 = CFrame.new(0,1.75,0)*CFrame.Angles(0,math.rad(90),0)
+motor1.C1 = CFrame.new(0,1,.45)*CFrame.Angles(0,math.rad(90),0)
+
+local wave = false
+
+repeat wait(1/44)
+local ang = 0.2
+local oldmag = Torso.Velocity.magnitude
+local mv = .1
+
+if wave then
+  ang = ang + ((Torso.Velocity.magnitude/10) * .05) + 1
+  wave = false
+else
+  wave = false
+end
+ang = ang + math.min(Torso.Velocity.magnitude/30, 1)
+motor1.MaxVelocity = math.min((Torso.Velocity.magnitude/10), .04) + mv
+motor1.DesiredAngle = -ang
+if motor1.CurrentAngle < -.05 and motor1.DesiredAngle > -.05 then
+  motor1.MaxVelocity = .04
+end
+repeat
+  wait()
+until 
+motor1.CurrentAngle == motor1.DesiredAngle or math.abs(Torso.Velocity.magnitude - oldmag)  >= (Torso.Velocity.magnitude/10) + 1
+if Torso.Velocity.magnitude < .1 then
+  wait(.1)
+end
+until not Cape or Cape.Parent ~= Torso.Parent
+end
+
+cmd.add({"forcefield", "ff"}, {"forcefield (ff)", "puts forxe field on player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        Instance.new('ForceField', pchar)
+    end
+end)
+
+cmd.add({"unforcefield", "noforcefield", "unff", "noff"}, {"unff (noff)", "removes forxe field on player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        for j,v1 in pairs(pchar:GetChildren()) do
+      if v1:IsA('ForceField') then
+        v1:Destroy()
+      end
+    end
+    end
+end)
+
+cmd.add({"fire", "flamas", "flame"}, {"fire (flamas, flame)", "set a player on fire"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        local Fire1 = Instance.new('Fire', pchar.Head)
+        local Fire2 = Instance.new('Fire', pchar.Torso)
+        local Fire3 = Instance.new('Fire', pchar['Left Arm'])
+        local Fire4 = Instance.new('Fire', pchar['Right Arm'])
+        local Fire5 = Instance.new('Fire', pchar['Left Leg'])
+        local Fire6 = Instance.new('Fire', pchar['Right Leg'])
+        Fire1.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire1.SecondaryColor = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire2.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire2.SecondaryColor = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire3.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire3.SecondaryColor = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire4.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire4.SecondaryColor = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire5.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire5.SecondaryColor = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire6.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Fire6.SecondaryColor = Color3.new((args[2]),(args[3]),(args[4]))
+    end
+end)
+
+cmd.add({"nofire", "noflamas", "unfire", "unflame"}, {"unfire (nofire)", "exstinguishes player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        for j,v1 in pairs(pchar.Head:GetChildren()) do
+      if v1:IsA('Fire') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar.Torso:GetChildren()) do
+      if v1:IsA('Fire') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Left Arm']:GetChildren()) do
+      if v1:IsA('Fire') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Right Arm']:GetChildren()) do
+      if v1:IsA('Fire') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Left Leg']:GetChildren()) do
+      if v1:IsA('Fire') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Right Leg']:GetChildren()) do
+      if v1:IsA('Fire') then
+        v1:Destroy()
+      end
+    end
+    end
+end)
+
+cmd.add({"sp", "sparkles"}, {"sparkles (sp)", "give a player sparkles"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        local Sparkles1 = Instance.new('Sparkles', pchar.Head)
+        local Sparkles2 = Instance.new('Sparkles', pchar.Torso)
+        local Sparkles3 = Instance.new('Sparkles', pchar['Left Arm'])
+        local Sparkles4 = Instance.new('Sparkles', pchar['Right Arm'])
+        local Sparkles5 = Instance.new('Sparkles', pchar['Left Leg'])
+        local Sparkles6 = Instance.new('Sparkles', pchar['Right Leg'])
+        Sparkles1.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Sparkles2.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Sparkles3.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Sparkles4.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Sparkles5.Color = Color3.new((args[2]),(args[3]),(args[4]))
+        Sparkles6.Color = Color3.new((args[2]),(args[3]),(args[4]))
+    end
+end)
+
+cmd.add({"unsparkles", "nosparkles", "unsp", "nosp"}, {"unsparkles (unsp, nosp, nosparkles)", "removes sparkles frm a player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        for j,v1 in pairs(pchar.Head:GetChildren()) do
+      if v1:IsA('Sparkles') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar.Torso:GetChildren()) do
+      if v1:IsA('Sparkles') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Left Arm']:GetChildren()) do
+      if v1:IsA('Sparkles') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Right Arm']:GetChildren()) do
+      if v1:IsA('Sparkles') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Left Leg']:GetChildren()) do
+      if v1:IsA('Sparkles') then
+        v1:Destroy()
+      end
+end
+        for j,v1 in pairs(pchar['Right Leg']:GetChildren()) do
+      if v1:IsA('Sparkles') then
+        v1:Destroy()
+      end
+    end
+    end
+end)
+
+cmd.add({"smoke"}, {"smoke", "gives a player smoke"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        Instance.new('Smoke', pchar.Torso)
+    end
+end)
+
+cmd.add({"nosmoke", "unsmoke"}, {"unsmoke (nosmoke)", "removed smoke frm a player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        for j,v1 in pairs(pchar.Torso:GetChildren()) do
+      if v1:IsA('Smoke') then
+        v1:Destroy()
+      end
+    end
+    end
+end)
+
+cmd.add({"godly", "maxhealth"}, {"godly (maxhealth)", "gods player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        if pchar then pchar.Humanoid.MaxHealth=math.huge end
+    end
+end)
+
+cmd.add({"sgod", "silentgod"}, {"silentgod (sgod)", "silently gods player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        spawn(function()
+            pchar.Humanoid.MaxHealth = 10000000
+      wait()
+      pchar.Humanoid.Health = 10000000
+        end)
+    end
+end)
+
+cmd.add({"ungodly", "nogodly"}, {"ungodly", "removes godmode frm player"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        if pchar then 
+      pchar.Humanoid.MaxHealth=100 
+      pchar.Humanoid.Health=100
+    end
+    end
+end)
+
+cmd.add({"heal"}, {"heal", "heals player health 100"}, function(args)
+    local players = getPlayer(args[1])
+    for i,v in pairs(players)do
+        local pchar=_char(v)
+        if pchar then pchar.Humanoid.Health=pchar.Humanoid.MaxHealth;end
+    end
+end)
+
+cmd.add({"frz"}, {"frz *freeze plr*", "freezes plr"}, function(args)
+  local players = getPlayer(args[1])
+  if players ~= nil then
+    for i, v in pairs(players) do
+      _char(v).Torso.Anchored = true
+    end
+  end
+end)
+
+cmd.add({"explode"}, {"explode", "explodes player"}, function(args)
+    local players = getPlayer(args[1])
+    for i, v in pairs(players) do
+        local char = _char(v)
+        if char:FindFirstChild('Torso') then
+            Instance.new('Explosion', char).Position = char.Torso.Position					
+        end
+    end
+end)
+
+cmd.add({"char", "morph"}, {"morph (char)", "morphs player into wtv u morphed"}, function(args)
+    local players = getPlayer(args[1])
+    if not args[1]or not args[2]then return end
+    local id=args[2]
+  if players ~= nil then
+    for i,v in pairs(players) do
+      gPlayers[v].CharacterAppearance = 'http://www.roblox.com/Asset/CharacterFetch.ashx?userId='..id
+      if _char(v):FindFirstChild('Head') then
+        _char(v).Head:Destroy()	
+      end
+    end
+  end
+end)
+
+cmd.add({"kick", "boot"}, {"kick (boot)", "boots a nigga"}, function(args)
+    local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    Notify('Kicked ' .. gPlayers[v].Name)
+    gPlayers[v]:Destroy()
+  end
+end)
+
+cmd.add({"ban"}, {"ban", "ban a player"}, function(args)
+    local players=getPlayer(args[1])
+  for i,v in pairs(players) do
+    gPlayers[v]:Destroy()
+        bannedplyrs[#bannedplyrs + 1] = v
+    gPlayers[v].Character:Destroy()
+    Notify('Banned' .. gPlayers[v].Name)
+  end
+end)
+
+cmd.add({"pstools"}, {"pstools", "gives a player personal server tools"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    gPlayers[v].PersonalServerRank = 240
+  end
+end)
+
+cmd.add({"skick", "sboot", "shutdownkick"}, {"shutdownkick (skick)", "kixks a player by shutting them down takes a few seks"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    spawn(function()
+      gPlayers[v].PersonalServerRank = 240
+      gPlayers[v].Backpack:WaitForChild('ClassicTool')
+      gPlayers[v].PersonalServerRank = 0
+    end)
+  end
+end)
+
+cmd.add({"name"}, {"name", "names a player what u want"}, function(args)
+    local players = getPlayer(args[1])
+    local name = getlongstring(false, 1)
+  for i,v in pairs(players) do
+    for a, mod in pairs(gPlayers[v].Character:children()) do
+    if mod:FindFirstChild('TAG') then
+    gPlayers[v].Character.Head.Transparency = 0
+    mod:Destroy()
+    end
+    end
+
+    local char = gPlayers[v].Character
+    local model = Instance.new('Model', char)
+    local clone = char.Head:Clone()
+    local hum = Instance.new('Humanoid', model)
+    local weld = Instance.new('Weld', clone)
+      model.Name = name
+      clone.Parent = model
+      hum.Name = 'TAG'
+      hum.MaxHealth = 100
+      hum.Health = 100
+      weld.Part0 = clone
+      weld.Part1 = char.Head
+      char.Head.Transparency = 1
+  end
+end)
+
+cmd.add({"unname"}, {"unname", "unnames player"}, function(args)
+    local players = getPlayer(args[1])
+    local name = (args[2])
+  for i,v in pairs(players) do
+    for a, mod in pairs(gPlayers[v].Character:children()) do
+      if mod:FindFirstChild('TAG') then
+        gPlayers[v].Character.Head.Transparency = 0
+        mod:Destroy()
+      end
+    end
+  end
+end)
+
+cmd.add({"stun"}, {"stun", "stuns player"}, function(args)
+    local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    gPlayers[v].Character.Humanoid.PlatformStand = true
+  end
+end)
+
+cmd.add({"unstun"}, {"unstun", "unstuns player"}, function(args)
+    local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    gPlayers[v].Character.Humanoid.PlatformStand = false
+  end
+end)
+
+cmd.add({"guest", "ew a guest"}, {"guest (ew a guest)", "kommandInfo"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players) do
+    gPlayers[v].CharacterAppearance = 'http://www.roblox.com/Asset/CharacterFetch.ashx?userId=1'
+    gPlayers[v].Character:BreakJoints()
+  end
+end)
+
+cmd.add({"yourmom", "urmom"}, {"yourmom (urmom)", "kommandInfo"}, function(args)
+loadstring(game:GetObjects('rbxassetid://289110135')[1].Source)()
+end)
 
 
 
@@ -12675,6 +13502,18 @@ until glueloop == false
  cmd.add({"gravity", "grav"}, {"gravity <amount> (grav)", "sets game gravity to whatever u want"}, function(...)
  game.Workspace.Gravity = (...)
  end)
+
+cmd.add({"ungrav", "ungravity"}, {"ungravity (ungrav)", "xhanges gravity baxk to normal"}, function(args)
+  local players = getPlayer(args[1])
+  for i,v in pairs(players)do
+      local pchar = gPlayers[v].Character
+      for i,v in pairs(pchar.Torso:GetChildren()) do
+        if v.Name == 'NoGrav' then
+          v:Destroy()
+        end
+      end
+  end
+end)
 
  cmd.add({"uanograv", "unanchorednograv", "unanchorednogravity"}, {"uanograv (unanchorednograv)", "Makes unanchored parts have 0 gravity"}, function()
    wait();
